@@ -22,10 +22,11 @@ def handling_post():
     if data['type'] == 'confirmation':
         return CONFIRMATION_TOKEN
     elif data['type'] == 'message_new':
-        api.messages.send(
-            peer_id=data['object']['user_id'],
-            random_id=0,
-            message='hoola hoola get a doolar')
+        if data['object']['body'] == '1':
+            api.messages.send(
+                peer_id=data['object']['user_id'],
+                random_id=0,
+                message='hoola hoola get a doolar')
         return 'ok'
 
 
