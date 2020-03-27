@@ -7,7 +7,7 @@ def hello():
     return 'Hello, World!'
 
 
-@app.route('/', methods=["POST"])
+@app.route('/', methods=["POST", "GET"])
 def handling_post():
     return 'Rauf master'
 
