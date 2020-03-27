@@ -31,6 +31,12 @@ def message_handler(n_type, uid):
             random_id=rand_id,
             attachment='photo87059723_457259690'
         )
+    elif n_type == 'новый год на книите':
+        api.messages.send(
+            peer_id=uid,
+            random_id=rand_id,
+            attachment='photo133280618_457258196'
+        )
     else:
         api.messages.send(
             peer_id=uid,
