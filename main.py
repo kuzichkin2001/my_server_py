@@ -26,6 +26,12 @@ def handling_post():
             api.messages.send(
                 peer_id=data['object']['user_id'],
                 random_id=0,
+                attachment='photo295713804_457254696'
+            )
+        else:
+            api.messages.send(
+                peer_id=data['object']['user_id'],
+                random_id=0,
                 message='hoola hoola get a doolar')
         return 'ok'
 
