@@ -1,6 +1,7 @@
 from flask import Flask, request
 import vk_api
 import json
+import random
 from settings import *
 
 
@@ -10,16 +11,17 @@ app = Flask(__name__)
 
 
 def message_handler(n_type, uid):
+    rand_id = random.randint(0, 10000000)
     if n_type in ans.keys():
         api.messages.send(
             peer_id=uid,
-            random_id=0,
+            random_id=rand_id,
             attachment=ans[n_type]
         )
     else:
         api.messages.send(
             peer_id=uid,
-            random_id=0,
+            random_id=rand_id,
             message='hoola hoola get a doolar'
         )
 
