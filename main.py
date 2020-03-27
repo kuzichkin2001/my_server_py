@@ -25,6 +25,12 @@ def message_handler(n_type, uid):
             random_id=rand_id,
             attachment='photo133280618_457258195'
         )
+    elif n_type == 'long long long':
+        api.messages.send(
+            peer_id=uid,
+            random_id=rand_id,
+            attachment='photo87059723_457259690'
+        )
     else:
         api.messages.send(
             peer_id=uid,
