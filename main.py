@@ -5,6 +5,7 @@ from settings import *
 
 
 vk_session = vk_api.VkApi(token=API_TOKEN)
+api = vk_session.get_api()
 app = Flask(__name__)
 
 
@@ -20,6 +21,13 @@ def handling_post():
         return 'not vk request'
     if data['type'] == 'confirmation':
         return CONFIRMATION_TOKEN
+    elif data['type'] == 'message_new':
+        api.messages.send(
+            peer_id=data['object']['user_id'],
+            random_id=0,
+            message='hoola hoola get a doolar')
+        return 'ok'
+
 
 
 if __name__ == '__main__':
