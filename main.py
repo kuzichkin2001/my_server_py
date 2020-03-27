@@ -13,10 +13,10 @@ app = Flask(__name__)
 def message_handler(n_type, uid):
     rand_id = random.randint(0, 10000000)
     if n_type in answers.keys():
-        for answer in answers[n_type]:
+        for i, answer in enumerate(answers[n_type], start=1):
             api.messages.send(
                 peer_id=uid,
-                random_id=rand_id,
+                random_id=rand_id + i,
                 attachment=answer
             )
     else:
