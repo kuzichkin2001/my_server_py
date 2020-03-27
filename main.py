@@ -23,7 +23,7 @@ def message_handler(n_type, uid):
         api.messages.send(
             peer_id=uid,
             random_id=rand_id,
-            attachment='photo133280618_457258194'
+            attachment='photo133280618_457258195'
         )
     else:
         api.messages.send(
