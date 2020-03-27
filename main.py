@@ -9,6 +9,21 @@ api = vk_session.get_api()
 app = Flask(__name__)
 
 
+def message_handler(n_type, uid):
+    if n_type in ans.keys():
+        api.messages.send(
+            peer_id=uid,
+            random_id=0,
+            attachment=ans['n_type']
+        )
+    else:
+        api.messages.send(
+            peer_id=uid,
+            random_id=0,
+            message='hoola hoola get a doolar'
+        )
+
+
 @app.route('/')
 def hello():
     return 'Hello, World!'
@@ -22,19 +37,8 @@ def handling_post():
     if data['type'] == 'confirmation':
         return CONFIRMATION_TOKEN
     elif data['type'] == 'message_new':
-        if data['object']['body'] == '1':
-            api.messages.send(
-                peer_id=data['object']['user_id'],
-                random_id=0,
-                attachment='photo295713804_457254696'
-            )
-        else:
-            api.messages.send(
-                peer_id=data['object']['user_id'],
-                random_id=0,
-                message='hoola hoola get a doolar')
+        message_handler(data['object']['body'], data['object']['user_id'])
         return 'ok'
-
 
 
 if __name__ == '__main__':
