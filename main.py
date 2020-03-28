@@ -23,7 +23,7 @@ def message_handler(n_type, uid):
         api.messages.send(
             peer_id=uid,
             random_id=rand_id,
-            attachment='photo133280618_457258195'
+            attachment='photo534733700_457242449'
         )
     elif n_type == 'long long long':
         api.messages.send(
@@ -37,13 +37,6 @@ def message_handler(n_type, uid):
             random_id=rand_id,
             attachment='photo133280618_457258196'
         )
-    elif n_type == 'видосы по матану':
-        for i, video in enumerate(matan_videos, start=0):
-            api.messages.send(
-                peer_id=uid,
-                random_id=rand_id,
-                attachment=video
-            )
     else:
         api.messages.send(
             peer_id=uid,
