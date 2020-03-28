@@ -1,3 +1,5 @@
+## Rauf's and Pasha's bot
+
 from flask import Flask, request
 import vk_api
 import json
@@ -24,18 +26,6 @@ def message_handler(n_type, uid):
             peer_id=uid,
             random_id=rand_id,
             attachment='photo534733700_457242449'
-        )
-    elif n_type == 'long long long':
-        api.messages.send(
-            peer_id=uid,
-            random_id=rand_id,
-            attachment='photo87059723_457259690'
-        )
-    elif n_type == 'новый год на книите':
-        api.messages.send(
-            peer_id=uid,
-            random_id=rand_id,
-            attachment='photo133280618_457258196'
         )
     else:
         api.messages.send(
